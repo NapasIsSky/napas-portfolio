@@ -9,11 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.10.1",
+    "@emotion/react": "^11.10.0",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@fontsource/prompt": "^4.5.9",
+    "@mui/base": "^5.0.0-alpha.93",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.10.1",
+    "dayjs": "^1.11.5",
+    "mobx": "^6.6.1",
+    "mobx-react-lite": "^3.4.0",
+    "mobx-state-tree": "^5.1.6",
     "next": "12.2.5",
-    "next-i18next": "^11.3.0",
+    "next-intl": "^2.7.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-i18next": "^11.18.4"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/node": "18.7.6",
