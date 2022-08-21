@@ -17,6 +17,7 @@
     "@mui/base": "^5.0.0-alpha.93",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.10.1",
+    "dayjs": "^1.11.5",
     "mobx": "^6.6.1",
     "mobx-react-lite": "^3.4.0",
     "mobx-state-tree": "^5.1.6",
