@@ -1,5 +1,7 @@
 import * as React from "react";
 import type { AppProps } from "next/app";
+import { NextIntlProvider } from "next-intl";
+
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 
@@ -10,7 +12,8 @@ import "@fontsource/prompt/700.css";
 
 import { createEmotionCache } from "../utils";
 import { bluePeachThemeOption } from "../theme";
-import "../styles/globals.css";
+import { observer } from "mobx-react-lite";
+
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
@@ -23,12 +26,14 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={lightTheme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </CacheProvider>
+    <NextIntlProvider messages={pageProps.messages}>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={lightTheme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </CacheProvider>
+    </NextIntlProvider>
   );
 };
 
