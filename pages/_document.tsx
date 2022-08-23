@@ -11,8 +11,9 @@ export default class MyDocument extends Document {
         <Head>
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=prompt:300,400,500,700&display=swap"
+            href="https://fonts.googleapis.com/css?family=prompt:400,500,600&display=swap"
           />
+          <link rel="stylesheet" href="/globals.css" />
         </Head>
         <body>
           <Main />

@@ -5,14 +5,12 @@ import { NextIntlProvider } from "next-intl";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 
-import "@fontsource/prompt/300.css";
 import "@fontsource/prompt/400.css";
 import "@fontsource/prompt/500.css";
-import "@fontsource/prompt/700.css";
+import "@fontsource/prompt/600.css";
 
 import { createEmotionCache } from "../utils";
 import { bluePeachThemeOption } from "../theme";
-import { observer } from "mobx-react-lite";
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;

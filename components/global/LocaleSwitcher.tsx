@@ -1,16 +1,37 @@
-import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
+import styled from "@emotion/styled";
+import { Box, Typography } from "@mui/material";
+import { Language } from "@mui/icons-material";
 
-export default function LocaleSwitcher() {
-  const t = useTranslations("LocaleSwitcher");
+import { COLORS } from "../../constants";
 
+const A = styled.a`
+  display: flex;
+  align-items: center;
+  position: relative;
+`;
+
+const LocaleSwitcher = () => {
+  const t = useTranslations("common");
   const { locale, locales, route } = useRouter();
   const otherLocale = locales?.find((cur) => cur !== locale);
 
   return (
     <Link href={route} locale={otherLocale}>
-      <a>{t("switchLocale", { locale: otherLocale })}</a>
+      <A>
+        <Language sx={{ color: COLORS.primary, cursor: "pointer" }} />
+
+        <Typography
+          color={COLORS.textPrimary}
+          sx={{ fontSize: 10, position: "absolute", right: -6, bottom: -6 }}
+        >
+          {t("switch-locales")}
+        </Typography>
+      </A>
     </Link>
   );
-}
+};
+
+export default LocaleSwitcher;
