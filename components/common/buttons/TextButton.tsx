@@ -1,15 +1,14 @@
-import { observer } from "mobx-react-lite";
 import { Typography } from "@mui/material";
 
 import { COLORS } from "../../../constants";
+import { IBaseComponent } from "../../../types";
 
-interface ITextButton {
-  id: string;
+interface ITextButton extends IBaseComponent {
   title: string;
   onClick: () => void;
 }
 
-const TextButton = (props: ITextButton) => {
+const TextButton: React.FC<ITextButton> = (props) => {
   const { title, onClick, id } = props;
 
   return (
@@ -17,14 +16,13 @@ const TextButton = (props: ITextButton) => {
       id={id}
       component={"a"}
       onClick={onClick}
-      textTransform={"uppercase"}
       variant={"button"}
       color={COLORS.textPrimary}
-      sx={{ cursor: "pointer" }}
+      sx={{ cursor: "pointer", textTransform: "uppercase" }}
     >
       {title}
     </Typography>
   );
 };
 
-export default observer(TextButton);
+export default TextButton;

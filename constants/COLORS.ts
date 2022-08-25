@@ -12,6 +12,8 @@ export const COLORS = {
 
   disable: SHADES.gray,
 
+  white: SHADES.white,
+
   bgLight: SHADES.white,
   bgPrimary: SHADES.blue,
 

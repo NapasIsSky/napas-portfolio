@@ -11,6 +11,9 @@
         "kavalee": "เกวลี",
         "name-position": "row",
         "position": "Frontend web developer",
-        "skills": "ทักษะ"
+        "skills": "ทักษะ",
+        "programing-language": "Programing Language",
+        "framework": "Framework",
+        "UI-library": "UI Library"
     }
 }

@@ -1,11 +1,10 @@
 import * as React from "react";
-import { observer } from "mobx-react-lite";
 import { Button } from "@mui/material";
 
 import { COLORS } from "../../../constants";
+import { IBaseComponent } from "../../../types";
 
-interface ICurvedButton {
-  id: string;
+interface ICurvedButton extends IBaseComponent {
   title: string;
   type: "primary" | "secondary" | "primaryOutline" | "secodaryOutline";
   onClick: () => void;
@@ -13,7 +12,7 @@ interface ICurvedButton {
   endIcon?: React.ReactNode;
 }
 
-const CurvedButton = (props: ICurvedButton) => {
+const CurvedButton: React.FC<ICurvedButton> = (props) => {
   const { id, title, type, onClick, startIcon, endIcon } = props;
 
   let variant: "outlined" | "contained" = "contained";
@@ -49,4 +48,4 @@ const CurvedButton = (props: ICurvedButton) => {
   );
 };
 
-export default observer(CurvedButton);
+export default CurvedButton;

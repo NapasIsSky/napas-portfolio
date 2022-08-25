@@ -8,6 +8,8 @@ import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import "@fontsource/prompt/400.css";
 import "@fontsource/prompt/500.css";
 import "@fontsource/prompt/600.css";
+import "swiper/css";
+import "swiper/css/navigation";
 
 import { createEmotionCache } from "../utils";
 import { bluePeachThemeOption } from "../theme";

@@ -11,6 +11,9 @@
         "kavalee": "Kavalee",
         "name-position": "column",
         "position": "Frontend web developer",
-        "skills": "skills"
+        "skills": "skills",
+        "programing-language": "Programing Language",
+        "framework": "Framework",
+        "UI-library": "UI Library"
     }
 }

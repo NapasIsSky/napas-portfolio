@@ -16,6 +16,7 @@ const NavigationBar = () => {
         paddingTop: 5,
         position: "sticky",
         top: 0,
+        zIndex: 3,
       }}
     >
       <Box
