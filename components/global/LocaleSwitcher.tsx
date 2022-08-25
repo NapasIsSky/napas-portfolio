@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
+import { observer } from "mobx-react-lite";
 import styled from "@emotion/styled";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Language } from "@mui/icons-material";
 
 import { COLORS } from "../../constants";
@@ -22,7 +23,6 @@ const LocaleSwitcher = () => {
     <Link href={route} locale={otherLocale}>
       <A>
         <Language sx={{ color: COLORS.primary, cursor: "pointer" }} />
-
         <Typography
           color={COLORS.textPrimary}
           sx={{ fontSize: 10, position: "absolute", right: -6, bottom: -6 }}
@@ -34,4 +34,4 @@ const LocaleSwitcher = () => {
   );
 };
 
-export default LocaleSwitcher;
+export default observer(LocaleSwitcher);

@@ -1,5 +1,16 @@
 {
     "common": {
-        "switch-locales": "EN"
+        "profile": "ข้อมูล",
+        "projects": "โปรเจค",
+        "exprerince": "ประสบการณ์",
+        "education": "การศึกษา",
+        "contact": "ติดต่อ",
+        "print-resume": "พิมพ์เรซูเม่",
+        "switch-locales": "EN",
+        "napas": "นภัส",
+        "kavalee": "เกวลี",
+        "name-position": "row",
+        "position": "Frontend web developer",
+        "skills": "ทักษะ"
     }
 }

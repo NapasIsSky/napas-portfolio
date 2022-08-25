@@ -1,5 +1,16 @@
 {
     "common": {
-        "switch-locales": "TH"
+        "profile": "profile",
+        "projects": "projects",
+        "exprerince": "exprerince",
+        "education": "education",
+        "contact": "contact",
+        "print-resume": "print resume",
+        "switch-locales": "TH",
+        "napas": "Napas",
+        "kavalee": "Kavalee",
+        "name-position": "column",
+        "position": "Frontend web developer",
+        "skills": "skills"
     }
 }
