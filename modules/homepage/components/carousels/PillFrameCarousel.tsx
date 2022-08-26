@@ -45,7 +45,7 @@ const PillFrameCarousel: React.FC<IPillFrameCarousel> = (props) => {
     return (
       <Box>
         <Divider sx={{ color: COLORS.primary }} />
-        <Carousel elementList={elementList()} navigation={false} />
+        <Carousel elementList={elementList()} navigation={false} type={"iconList"} />
       </Box>
     );
   };
@@ -62,7 +62,7 @@ const PillFrameCarousel: React.FC<IPillFrameCarousel> = (props) => {
           maxWidth={"lg"}
           sx={{ border: `2px solid ${COLORS.primary}`, borderRadius: 100, padding: 4 }}
         >
-          <Carousel elementList={elementList()} navigation={false} />
+          <Carousel elementList={elementList()} navigation={false} type={"iconList"} />
         </Container>{" "}
       </Box>
     );

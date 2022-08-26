@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useTranslations } from "next-intl";
 import { observer } from "mobx-react-lite";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -8,6 +7,7 @@ import { IIconInList, PillFrameCarousel } from "../carousels";
 
 interface IProfileSection {
   locale?: string;
+  t: any;
 }
 
 const MOCKUPICONLIST: IIconInList[] = [
@@ -42,9 +42,7 @@ const MOCKUPICONLIST: IIconInList[] = [
 ];
 
 const ProfileSection = (props: IProfileSection) => {
-  const { locale } = props;
-
-  const t = useTranslations("common");
+  const { locale, t } = props;
 
   const renderNameAndPosition = () => {
     return (

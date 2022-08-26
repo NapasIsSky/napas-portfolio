@@ -1,10 +1,11 @@
 import * as React from "react";
 import { ReactSVG } from "react-svg";
+import { ICONS } from "../../../constants";
 
 import { IBaseComponent } from "../../../types";
 
 interface IIcon extends IBaseComponent {
-  src: string;
+  src?: string;
   width: number;
   height: number;
   fill?: string;
@@ -19,7 +20,7 @@ const Icon: React.FC<IIcon> = (props) => {
   return (
     <ReactSVG
       id={id}
-      src={src}
+      src={src || ICONS.napasIsSkyFlatIcon}
       beforeInjection={(svg) => {
         let styles = `width:${width}px;height:${height}px;`;
         if (fill) {

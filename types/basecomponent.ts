@@ -1,3 +1,3 @@
 export interface IBaseComponent {
-  id: string;
+  id?: string;
 }

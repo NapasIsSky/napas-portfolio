@@ -6,12 +6,13 @@ import { IBaseComponent } from "../../../types";
 import Icon from "./Icon";
 
 interface IIconWithFrame extends IBaseComponent {
-  src: string;
+  src?: string;
   size: "s" | "m" | "l";
+  onClick?: () => void;
 }
 
 const IconWithFrame: React.FC<IIconWithFrame> = (props) => {
-  const { id, src, size } = props;
+  const { id, src, size, onClick } = props;
 
   let frameSize: number = 130;
   let iconSize: number = 90;
@@ -34,6 +35,7 @@ const IconWithFrame: React.FC<IIconWithFrame> = (props) => {
       display={"flex"}
       alignItems={"center"}
       justifyContent={"center"}
+      onClick={onClick}
     >
       <Icon id={`icon-${id}`} src={src} width={iconSize} height={iconSize} fill={COLORS.white} />
     </Box>

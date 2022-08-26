@@ -1,10 +1,10 @@
+import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import { GetStaticPropsContext } from "next";
+import { useTranslations } from "next-intl";
 import { Box, Typography } from "@mui/material";
 import { pink, lightBlue } from "@mui/material/colors";
 import { Container } from "@mui/system";
-import type { NextPage } from "next";
-import { GetStaticPropsContext } from "next";
-import { useTranslations } from "next-intl";
 
 import { COLORS } from "../constants";
 import { NavigationBar } from "../components/global";
@@ -15,12 +15,17 @@ const Home: NextPage = () => {
   const t = useTranslations("common");
 
   return (
-    <Box bgcolor={COLORS.bgLight} height={"100%"} overflow={"auto"} paddingBottom={5}>
+    <Box
+      bgcolor={COLORS.bgLight}
+      height={"100%"}
+      paddingBottom={5}
+      sx={{ overflowY: "auto", overflowX: "hidden" }}
+    >
       <NavigationBar />
 
-      <ProfileSection locale={locale} />
+      <ProfileSection locale={locale} t={t} />
 
-      <ProjectsSection />
+      <ProjectsSection t={t} />
       <Container maxWidth={"lg"} sx={{ marginTop: 5 }}>
         <Box sx={{ bgcolor: pink[200], width: "100%" }}>
           <Typography>{"I can section"}</Typography>
