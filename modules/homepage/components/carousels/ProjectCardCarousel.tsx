@@ -34,7 +34,6 @@ const ProjectCardCarousel: React.FC<IProjectCardCarousel> = (props) => {
             actionComponent={el.actionComponent}
             onClick={el.onClick}
           />
-          ,
         </Box>,
       ),
     );

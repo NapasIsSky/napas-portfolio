@@ -6,6 +6,7 @@ import { IProjectCard } from "../";
 import { IconWithFrame } from "../../../../components/common";
 import { ProjectCard } from "../cards";
 import { ProjectCardCarousel } from "../carousels";
+import { observer } from "mobx-react-lite";
 
 interface IProjectsSection {
   t: any;
@@ -48,12 +49,12 @@ const ProjectsSection: React.FC<IProjectsSection> = (props) => {
   const { t } = props;
 
   return (
-    <Box bgcolor={COLORS.bgPrimary} paddingY={8} marginTop={8}>
+    <Box id={"projects-section"} bgcolor={COLORS.bgPrimary} paddingY={8} marginTop={8}>
       <Typography
         variant={"h1"}
         textTransform={"uppercase"}
         color={COLORS.textWhite}
-        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+        textAlign={"center"}
       >
         {t("projects")}
       </Typography>
@@ -64,4 +65,4 @@ const ProjectsSection: React.FC<IProjectsSection> = (props) => {
   );
 };
 
-export default ProjectsSection;
+export default observer(ProjectsSection);

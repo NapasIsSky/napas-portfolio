@@ -8,7 +8,7 @@ import { Container } from "@mui/system";
 
 import { COLORS } from "../constants";
 import { NavigationBar } from "../components/global";
-import { ProfileSection, ProjectsSection } from "../modules/homepage/components";
+import { EducationSection, ProfileSection, ProjectsSection } from "../modules/homepage/components";
 
 const Home: NextPage = () => {
   const { locale } = useRouter();
@@ -36,13 +36,9 @@ const Home: NextPage = () => {
           <Typography>{"Employee history section"}</Typography>
         </Box>
       </Container>
-      <Box bgcolor={lightBlue[900]} paddingY={5} marginTop={5}>
-        <Container maxWidth={"lg"}>
-          <Box sx={{ bgcolor: pink[200], width: "100%" }}>
-            <Typography>{"Education section"}</Typography>
-          </Box>
-        </Container>
-      </Box>
+
+      <EducationSection t={t} />
+
       <Container maxWidth={"lg"} sx={{ marginTop: 5 }}>
         <Box sx={{ bgcolor: pink[200], width: "100%" }}>
           <Typography>{"Contact section"}</Typography>
