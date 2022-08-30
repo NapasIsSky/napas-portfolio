@@ -63,7 +63,7 @@ const PillFrameCarousel: React.FC<IPillFrameCarousel> = (props) => {
           sx={{ border: `2px solid ${COLORS.primary}`, borderRadius: 100, padding: 4 }}
         >
           <Carousel elementList={elementList()} navigation={false} type={"iconList"} />
-        </Container>{" "}
+        </Container>
       </Box>
     );
   };
