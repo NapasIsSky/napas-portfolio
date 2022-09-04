@@ -2,13 +2,18 @@ import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
-import { Box, Typography } from "@mui/material";
-import { pink, lightBlue } from "@mui/material/colors";
-import { Container } from "@mui/system";
+import { Box } from "@mui/material";
 
 import { COLORS } from "../constants";
 import { NavigationBar } from "../components/global";
-import { EducationSection, ProfileSection, ProjectsSection } from "../modules/homepage/components";
+import {
+  ContactSection,
+  EducationSection,
+  EmployeeHistorySection,
+  ICanSection,
+  ProfileSection,
+  ProjectsSection,
+} from "../modules/homepage/components";
 
 const Home: NextPage = () => {
   const { locale } = useRouter();
@@ -22,28 +27,12 @@ const Home: NextPage = () => {
       sx={{ overflowY: "auto", overflowX: "hidden" }}
     >
       <NavigationBar />
-
       <ProfileSection locale={locale} t={t} />
-
       <ProjectsSection t={t} />
-      <Container maxWidth={"lg"} sx={{ marginTop: 5 }}>
-        <Box sx={{ bgcolor: pink[200], width: "100%" }}>
-          <Typography>{"I can section"}</Typography>
-        </Box>
-      </Container>
-      <Container maxWidth={"lg"} sx={{ marginTop: 5 }}>
-        <Box sx={{ bgcolor: pink[200], width: "100%" }}>
-          <Typography>{"Employee history section"}</Typography>
-        </Box>
-      </Container>
-
+      <ICanSection t={t} />
+      <EmployeeHistorySection t={t} />
       <EducationSection t={t} />
-
-      <Container maxWidth={"lg"} sx={{ marginTop: 5 }}>
-        <Box sx={{ bgcolor: pink[200], width: "100%" }}>
-          <Typography>{"Contact section"}</Typography>
-        </Box>
-      </Container>
+      <ContactSection t={t} />
     </Box>
   );
 };

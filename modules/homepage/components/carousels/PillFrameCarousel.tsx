@@ -32,7 +32,12 @@ const PillFrameCarousel: React.FC<IPillFrameCarousel> = (props) => {
           justifyContent={isMobile ? "flex-end" : "center"}
         >
           <Tooltip key={`icon-${el.label}-${index}`} title={el.label}>
-            <IconWithFrame id={`icon-${el.label}`} size={isMobile ? "m" : "l"} src={el.srcIcon} />
+            <IconWithFrame
+              id={`icon-${el.label}`}
+              type={"primary"}
+              size={isMobile ? "m" : "l"}
+              src={el.srcIcon}
+            />
           </Tooltip>
         </Box>,
       ),

@@ -4,6 +4,7 @@ const SHADES = {
   black: "#354551",
   white: "#F0F4F5",
   gray: "#90B0C0",
+  transparent: "#00000000",
 };
 
 export const COLORS = {
@@ -13,6 +14,7 @@ export const COLORS = {
   disable: SHADES.gray,
 
   white: SHADES.white,
+  transparent: SHADES.transparent,
 
   bgLight: SHADES.white,
   bgPrimary: SHADES.blue,
