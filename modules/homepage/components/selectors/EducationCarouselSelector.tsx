@@ -3,6 +3,7 @@ import { observer } from "mobx-react-lite";
 import { Box, Container, Paper, Typography } from "@mui/material";
 
 import { Carousel, IconWithFrame } from "../../../../components/common";
+import { COLORS } from "../../../../constants";
 
 export interface IAward {
   name: string;
@@ -40,7 +41,7 @@ const EducationCarouselSelector: React.FC<IEducationCarouselSelector> = (props) 
       list.push(
         <IconWithFrame
           id={`education-logo-${index}`}
-          type={el === showEducation ? "secodaryOutline" : "primary"}
+          type={el === showEducation ? "secodaryOutline" : "primaryOutline"}
           size={"l"}
           src={el.logo}
           onClick={() => setShowEducation(el)}
@@ -52,21 +53,20 @@ const EducationCarouselSelector: React.FC<IEducationCarouselSelector> = (props) 
   };
 
   return (
-    <Box>
-      <Box>
-        <Carousel elementList={elementList()} navigation={false} type={"iconList"} />
-      </Box>
-      <Container>
-        <Paper elevation={0} sx={{ borderRadius: 1, padding: 2 }}>
-          <Typography>{showEducation.degree}</Typography>
-          <Typography>{showEducation.major}</Typography>
-          <Typography>{showEducation.school}</Typography>
-          <Typography>{`${showEducation.schoolProvince}, ${showEducation.schoolCountry}`}</Typography>
-          <Typography>{`${showEducation.startDate} - ${showEducation.endDate}`}</Typography>
-          {showEducation.gpa ? <Typography>{`GPA: ${showEducation.gpa}`}</Typography> : null}
-        </Paper>
-      </Container>
-    </Box>
+    <Container>
+      <Carousel elementList={elementList()} navigation={false} type={"iconList"} />
+      <Paper
+        elevation={0}
+        sx={{ borderRadius: 1, padding: 2, marginTop: 3, bgcolor: COLORS.bgLight }}
+      >
+        <Typography>{showEducation.degree}</Typography>
+        <Typography>{showEducation.major}</Typography>
+        <Typography>{showEducation.school}</Typography>
+        <Typography>{`${showEducation.schoolProvince}, ${showEducation.schoolCountry}`}</Typography>
+        <Typography>{`${showEducation.startDate} - ${showEducation.endDate}`}</Typography>
+        {showEducation.gpa ? <Typography>{`GPA: ${showEducation.gpa}`}</Typography> : null}
+      </Paper>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { observer } from "mobx-react-lite";
-import { Box, Container } from "@mui/material";
+import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
 import LocaleSwitcher from "./LocaleSwitcher";
 
 import { COLORS } from "../../constants";
@@ -8,6 +8,9 @@ import { CurvedButton, TextButton } from "../common";
 
 const NavigationBar = () => {
   const t = useTranslations("common");
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.only("xs"));
 
   return (
     <Container

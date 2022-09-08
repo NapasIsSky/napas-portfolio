@@ -1,30 +1,30 @@
 import { Box } from "@mui/material";
 import * as React from "react";
-import { COLORS, ICONS } from "../../../constants";
+import { COLORS, ICONS, ICONSIZES } from "../../../constants";
 
 import { IBaseComponent } from "../../../types";
 import Icon from "./Icon";
 
-interface IIconWithFrame extends IBaseComponent {
-  src?: string | React.ReactNode;
+interface IIconWithFrame extends IBaseComponent, React.PropsWithChildren {
+  src?: string;
   size: "s" | "m" | "l";
   type: "primary" | "secondary" | "primaryOutline" | "secodaryOutline";
   onClick?: () => void;
 }
 
-const IconWithFrame: React.FC<IIconWithFrame> = (props) => {
-  const { id, src, size, type, onClick } = props;
+const IconWithFrame: React.FunctionComponent<IIconWithFrame> = (props) => {
+  const { id, src, size, type, onClick, children } = props;
 
   // Size
   let frameSize: number = 130;
-  let iconSize: number = 90;
+  let iconSize: number = ICONSIZES.l;
 
   if (size === "s") {
     frameSize = 80;
-    iconSize = 50;
+    iconSize = ICONSIZES.s;
   } else if (size === "m") {
     frameSize = 92;
-    iconSize = 64;
+    iconSize = ICONSIZES.m;
   }
 
   // Color
@@ -45,17 +45,15 @@ const IconWithFrame: React.FC<IIconWithFrame> = (props) => {
   }
 
   const renderIcon = () => {
-    if (typeof src !== "string" || typeof src !== "undefined") {
-      return src;
-    } else {
+    return (
       <Icon
         id={`icon-${id}`}
         src={src || ICONS.napasIsSkyFlatIcon}
         width={iconSize}
         height={iconSize}
         fill={iconColor}
-      />;
-    }
+      />
+    );
   };
 
   return (
@@ -71,7 +69,7 @@ const IconWithFrame: React.FC<IIconWithFrame> = (props) => {
       justifyContent={"center"}
       onClick={onClick}
     >
-      {renderIcon()}
+      {children ? children : renderIcon()}
     </Box>
   );
 };

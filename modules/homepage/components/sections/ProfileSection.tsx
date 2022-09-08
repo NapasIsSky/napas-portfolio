@@ -8,6 +8,7 @@ import { IIconInList, PillFrameCarousel } from "../carousels";
 interface IProfileSection {
   locale?: string;
   t: any;
+  isMobile: boolean;
 }
 
 const MOCKUPICONLIST: IIconInList[] = [
@@ -42,7 +43,7 @@ const MOCKUPICONLIST: IIconInList[] = [
 ];
 
 const ProfileSection = (props: IProfileSection) => {
-  const { locale, t } = props;
+  const { locale, t, isMobile } = props;
 
   const renderNameAndPosition = () => {
     return (

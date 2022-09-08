@@ -26,7 +26,11 @@ const ProjectCard: React.FC<IProjectCard> = (props) => {
   const isMobile = useMediaQuery(theme.breakpoints.only("xs"));
 
   return (
-    <Card id={id} onClick={onClick} sx={{ width: isMobile ? 300 : 380, padding: 2 }}>
+    <Card
+      id={id}
+      onClick={onClick}
+      sx={{ width: isMobile ? 300 : 380, padding: 2, bgcolor: COLORS.bgLight }}
+    >
       <CardMedia
         component={"svg"}
         height={270}

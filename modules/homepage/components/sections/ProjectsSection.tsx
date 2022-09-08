@@ -10,6 +10,7 @@ import { observer } from "mobx-react-lite";
 
 interface IProjectsSection {
   t: any;
+  isMobile: boolean;
 }
 
 const MOCKUPPROJECTLIST: IProjectCard[] = [
@@ -81,7 +82,7 @@ const MOCKUPPROJECTLIST: IProjectCard[] = [
 ];
 
 const ProjectsSection: React.FC<IProjectsSection> = (props) => {
-  const { t } = props;
+  const { t, isMobile } = props;
 
   return (
     <Box id={"projects-section"} bgcolor={COLORS.bgPrimary} paddingY={8} marginTop={8}>

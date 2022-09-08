@@ -4,10 +4,11 @@ import { Box, Container, Typography } from "@mui/material";
 
 interface IICanSection {
   t: any;
+  isMobile: boolean;
 }
 
 const ICanSection: React.FC<IICanSection> = (props) => {
-  const { t } = props;
+  const { t, isMobile } = props;
   return (
     <Container maxWidth={"lg"} sx={{ marginTop: 5 }}>
       <Box sx={{ width: "100%" }}>

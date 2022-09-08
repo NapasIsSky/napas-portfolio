@@ -7,6 +7,7 @@ import { EducationCarouselSelector, IEducationInfo } from "..";
 
 interface IEducationSection {
   t: any;
+  isMobile: boolean;
 }
 
 const MOCKUP_EDUCATIONLIST: IEducationInfo[] = [
@@ -35,7 +36,7 @@ const MOCKUP_EDUCATIONLIST: IEducationInfo[] = [
 ];
 
 const EducationSection: React.FC<IEducationSection> = (props) => {
-  const { t } = props;
+  const { t, isMobile } = props;
 
   return (
     <Box id={"education-section"} bgcolor={COLORS.bgPrimary} paddingY={5} marginTop={5}>

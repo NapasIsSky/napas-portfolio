@@ -1,12 +1,13 @@
 export {
   ContactSection,
   EducationSection,
-  EmployeeHistorySection,
+  EmploymentHistorySection,
   ICanSection,
   ProfileSection,
   ProjectsSection,
 } from "./sections";
-export { ProjectCard } from "./cards";
+export { ProjectCard, EmploymentDetailCard } from "./cards";
+export type { IEnploymentDetails } from "./cards";
 export type { IProjectCard } from "./cards";
 export { PillFrameCarousel, ProjectCardCarousel } from "./carousels";
 export type { IIconInList } from "./carousels";

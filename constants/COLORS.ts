@@ -1,6 +1,6 @@
 const SHADES = {
   blue: "#2A8EAC",
-  peach: "#FF8976",
+  peach: "#FFA192",
   black: "#354551",
   white: "#F0F4F5",
   gray: "#90B0C0",
