@@ -1,15 +1,10 @@
 import * as React from "react";
 import { observer } from "mobx-react-lite";
-import { Box, Container, Link, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { LinkedIn, Call, Email, Home } from "@mui/icons-material";
 
 import { COLORS, ICONSIZES } from "../../../../constants";
 import { IconWithFrame } from "../../../../components/common";
-
-interface IContactBtn {
-  url: string;
-  iconsrc: string | React.ReactNode;
-}
 
 interface IContactSection {
   t: any;
@@ -51,7 +46,12 @@ const ContactSection: React.FC<IContactSection> = (props) => {
         <IconWithFrame
           size={"l"}
           type={"primaryOutline"}
-          onClick={() => navigator.clipboard.writeText("084 116 4455")}
+          onClick={() => {
+            if (isMobile) {
+              window.open("tel:084 116 4455");
+            }
+            navigator.clipboard.writeText("084 116 4455");
+          }}
         >
           <Call sx={{ fill: COLORS.primary, width: ICONSIZES.l, height: ICONSIZES.l }} />
         </IconWithFrame>

@@ -48,7 +48,9 @@ const EmploymentHistorySection: React.FC<IEmploymentHistorySection> = (props) =>
     return (
       <Box>
         {MOCKUP_EMPLOYMENT_DETAIL_LIST.map((el: IEnploymentDetails, index: number) => (
-          <EmploymentDetailCard key={index} type={"primary"} cardInfo={el} />
+          <Box key={index} marginTop={3}>
+            <EmploymentDetailCard type={"primary"} cardInfo={el} />
+          </Box>
         ))}
       </Box>
     );
